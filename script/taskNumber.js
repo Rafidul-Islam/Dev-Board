@@ -1,5 +1,9 @@
 const btns = document.querySelectorAll(".complete-btn");
-
+// Date and time
+const date = new Date();
+const dateInput = document.getElementById("date");
+dateInput.innerText = date.toDateString();
+// for each button
 for (const btn of btns) {
   btn.addEventListener("click", function (event) {
     const taskNumberInnerText =
@@ -7,12 +11,10 @@ for (const btn of btns) {
     const convertedTaskNumber = parseInt(taskNumberInnerText);
     const updatedTaskNumber = convertedTaskNumber - 1;
     document.getElementById("task-number").innerText = updatedTaskNumber;
-    // Date and Time
-    const date = new Date();
+
+    // Time
     const time = new Date().toLocaleTimeString();
 
-    const dateInput = document.getElementById("date");
-    dateInput.innerText = date.toDateString();
     // Now for the total done section
     const totalTaskNumber =
       document.getElementById("total-task-number").innerText;
