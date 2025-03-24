@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TailwindCSS Link -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- DaisyUI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- CSS link -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dev Board</title>
+  </head>
+  <body class="bg-[#f4f7ff] px-[7%] py-[1%] poppins">
+    <header class="bg-white p-2 rounded-lg mb-4">
+      <nav class="flex items-center justify-between">
+        <!-- Right Side Logo -->
+        <div class="flex items-center gap-1">
+          <img class="max-w-10" src="assets/logo.png" alt="" />
+          <h1 class="text-2xl hidden lg:inline-block">
+            Dev<span class="font-medium">Board</span>
+          </h1>
+        </div>
+        <!-- Left side Buttons -->
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 bg-sky-200 p-2 rounded-3xl">
+            <img class="w-5" src="assets/checkbox.png" alt="" />
+            <p id="total-task-number"><b>23</b></p>
+          </div>
+          <div>
+            <img id="theme-color" src="assets/theme-btn.png" alt="" />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Main Sdection Starts -->
+    <main>
+      <!-- The bigger Section (Task) -->
+      <section class="flex rounded-xl gap-2">
+        <section class="w-[75%] p-4 bg-white rounded-xl">
+          <section
+            class="flex gap-2 justify-around mb-2 border-b-2 border-dashed border-gray-200 pb-2"
+          >
+            <!-- Task Assigned Section -->
+            <div
+              class="bg-[#f4f7ff] w-[25%] flex items-center rounded-lg p-3 gap-2"
+            >
+              <div class="bg-white inline-block p-3 rounded-full">
+                <img class="w-6" src="assets/checkbox.png" alt="" />
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Task Assigned</p>
+                <p class="text-2xl font-semibold" id="task-number">6</p>
+              </div>
+            </div>
+            <!-- Discover Section  -->
+            <div
+              id="QNA"
+              class="bg-sky-100 w-[50%] flex rounded-lg items-center px-3 py-2 gradient gap-3 cursor-pointer"
+            >
+              <div>
+                <img src="assets/board.png" alt="" />
+              </div>
+              <div>
+                <p class="text-xl text-white">Discover Something New Today !</p>
+              </div>
+            </div>
+            <!-- Calendar Section -->
+            <div
+              class="bg-[#f4f7ff] w-[25%] flex rounded-lg items-center px-3 py-2 gap-3"
+            >
+              <div>
+                <img src="assets/calender.png" alt="" />
+              </div>
+              <div>
+                <p id="date"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Card Container  -->
+          <section id="card-container" class="card-container">
+            <section class="card-section grid grid-cols-3 gap-2">
+              <!-- Card 1 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">
+                  ShopEase
+                </p>
+                <h2 class="task-name text-base font-semibold" id="fix-mobile">
+                  Fix Mobile Button Issue
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Debug using chrome Devtools,check for overlapping...
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-1"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">
+                  CloudSync
+                </p>
+                <h2 class="text-base font-semibold" id="add-dark-mode">
+                  Add Dark Mode
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Store the user's preference in localStorage, update CSS
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-2"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">
+                  SwiftPay
+                </p>
+                <h2 class="text-base font-semibold" id="optimize">
+                  Optimize Home Page
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Debug using chrome Devtools,check for overlapping...
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-3"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">Meta</p>
+                <h2 class="text-base font-semibold" id="add-new-emoji">
+                  Add New Emoji &#129330;
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Debug using chrome Devtools,check for overlapping...
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-4"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">
+                  Google LLC
+                </p>
+                <h2 class="text-base font-semibold" id="integrate">
+                  Integrate OpenAI API
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Debug using chrome Devtools,check for overlapping...
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-5"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="bg-[#f4f7ff] p-2 rounded-lg space-y-3">
+                <p class="p-2 rounded-lg bg-white inline-block text-xs">
+                  GlassDoor
+                </p>
+                <h2 class="text-base font-semibold" id="improve">
+                  Improve Job Searching
+                </h2>
+                <p class="p-3 bg-white rounded-lg text-xs text-gray-700">
+                  Debug using chrome Devtools,check for overlapping...
+                </p>
+                <div class="flex justify-between items-center mt-5">
+                  <div>
+                    <p class="text-xs">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <div>
+                    <button
+                      id="btn-6"
+                      class="complete-btn bg-[#3752FD] p-2 rounded font-semibold text-white text-xs cursor-pointer disabled:bg-slate-500"
+                    >
+                      Completed
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </section>
+        <!-- The Smaller Section (Activity)  -->
+        <section class="w-[25%] bg-white rounded-xl py-5 px-2">
+          <!-- Top section -->
+          <section
+            class="flex flex-col text-center space-y-2 border-b-2 border-dashed border-gray-200 pb-3"
+          >
+            <div class="flex gap-2 mx-auto">
+              <img class="" src="assets/activity.png" alt="" />
+              <p>Activity Log</p>
+            </div>
+            <div>
+              <button
+                id="clear-button"
+                class="btn gradient px-2 py-1 rounded mx-auto"
+              >
+                Clear History
+              </button>
+            </div>
+          </section>
+          <!-- Bottom Section -->
+          <section id="history" class="mt-2"></section>
+        </section>
+      </section>
+    </main>
+    <footer>&copy;rafidul islam</footer>
+
+    <script src="script/taskNumber.js"></script>
+    <script src="script/ClearHistory.js"></script>
+    <script src="script/Qna.js"></script>
+    <script src="script/bgRandomColor.js"></script>
+  </body>
+</html>

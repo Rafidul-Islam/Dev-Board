@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TailwindCSS Link -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- DaisyUI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- CSS link -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dev Board</title>
+  </head>
+  <body class="bg-[#dee4f7] px-[7%] py-[1%] poppins">
+    <header class="bg-white p-2 rounded-lg mb-4">
+      <nav class="flex items-center justify-between">
+        <!-- Right Side Logo -->
+        <div class="flex items-center gap-1">
+          <img class="max-w-10" src="assets/logo.png" alt="" />
+          <h1 class="text-2xl hidden lg:inline-block">
+            Dev<span class="font-medium">Board</span>
+          </h1>
+        </div>
+        <!-- Left side Buttons -->
+        <div class="flex items-center gap-4">
+          <button class="btn bg-violet-800 text-white" id="back-to-desk-btn">
+            Back To Desk
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2 class="text-2xl font-bold text-center mb-3">Blogs</h2>
+      </section>
+      <section class="space-y-4">
+        <div class="bg-white rounded">
+          <p class="text-lg font-semibold p-3">
+            Question-1 : What are the different ways to select an element in the
+            DOM?
+          </p>
+          <hr class="opacity-20" />
+          <p class="p-3 text-sm">
+            There are many ways to select a HTML Elemnt in DOM.We can select an
+            elemnt by their TagName, ClassName, Id, QuerySelector,
+            QuerySelectorAll. <br />
+            <span class="font-medium underline">Example </span>:
+            document.getELementsByTagName('p'),<br />
+            document.getElementsByClassName("fruits");<br />
+            document.getElementById("banana");<br />
+            document.querySelector(".fruits");
+            <span class="text-green-800"
+              >[It selects the first element of the section]</span
+            >
+            <br />
+            document.querySelectorAll(".fruits");
+            <span class="text-green-800"
+              >[It selects all of the element under that section]</span
+            >
+          </p>
+        </div>
+        <div class="bg-white rounded">
+          <p class="text-lg font-semibold p-3">
+            Question-2 : What is the difference between innerHTML, innerText,
+            and textContent ?
+          </p>
+          <hr class="opacity-20" />
+          <p class="p-3 text-sm">
+            <b>innerText</b> : This selects the inner written text from the
+            element and returns only the text. <br />
+            <span class="font-medium underline">Example </span>: &lt;h1
+            id="heading"&gt;Hello, World!&lt;/h1&gt; <br />
+            document.getElementById("heading").innerText = Hello, World!
+            <span class="text-green-800"
+              >[This returns only the visible text]</span
+            >
+          </p>
+          <p class="p-3 text-sm">
+            <b>innerHTML </b> : This selects the full element includin the text
+            and tagname. <br />
+            <span class="font-medium underline">Example </span>: &lt;h1
+            id="heading"&gt;Hello, World!&lt;/h1&gt; <br />
+            document.getElementById("heading").innerHTML = &lt;h1
+            id="heading"&gt;Hello, World!&lt;/h1&gt;
+            <span class="text-green-800">[This returns the full Element]</span>
+          </p>
+          <p class="p-3 text-sm">
+            <b>textContent </b> :Didnt know it earlier,had to google it.This
+            Shows the hidden text in an alert box.<br />
+            <span class="font-medium underline">Example </span>: &lt;h1
+            id="heading" class="hidden"&gt;Hello, World!&lt;/h1&gt; <br />
+            document.getElementById("heading").textContent =alert( "Hello,
+            World!")
+            <span class="text-green-800"
+              >[This returns the text and shows in an alert box]</span
+            >
+          </p>
+        </div>
+        <div class="bg-white rounded">
+          <p class="text-lg font-semibold p-3">
+            Question-3 : What is event delegation in the DOM?
+          </p>
+          <hr class="opacity-20" />
+          <p class="p-3 text-sm">
+            Event delegation is a process where you can manipulate the task of
+            the parent node one time istead of creating event for multiple child
+            under the parent.This reduces the hastle of implementing multiple
+            events in the document.
+            <br />
+            We mainly use event delegation to <br />
+            &nbsp; 1.Save memory <br />&nbsp; 2.Improve performance and <br />
+            &nbsp; 3.Clean Code.
+          </p>
+        </div>
+        <div class="bg-white rounded">
+          <p class="text-lg font-semibold p-3">
+            Question-4 : What is event bubbling in the DOM?
+          </p>
+          <hr class="opacity-20" />
+          <p class="p-3 text-sm">
+            Event bubbling is when you click in the page element, it starts the
+            event from the target element and goes upward till its root element.
+            <br />
+            Like if you click in list items it will go to its list
+            parent(ul/ol),then go to ol's parent ,then go to ol's parent's
+            parent.This will conntinue until it reaches the root document.
+          </p>
+        </div>
+        <div class="bg-white rounded">
+          <p class="text-lg font-semibold p-3">
+            Question-5: How do you create, add, and remove elements using
+            JavaScript?
+          </p>
+          <hr class="opacity-20" />
+          <p class="p-3 text-sm">
+            STEP 1: Get the element where you want to create a new element.
+            <br />
+            <span class="font-medium underline">Example </span>: <br />
+            const parent = document.getElementById("fruits");
+          </p>
+          <p class="p-3 text-sm">
+            STEP 2: Create a new element using createElement('p').
+            <br />
+            <span class="font-medium underline">Example </span>: <br />
+            const p = document.createElement('p');
+          </p>
+          <p class="p-3 text-sm">
+            STEP 3: Set value,text and attributes to the element.
+            <br />
+            <span class="font-medium underline">Example </span>: <br />
+            p.innerText = "Hello World !";
+          </p>
+          <p class="p-3 text-sm">
+            STEP 4: Append The child to the parent Element
+            <br />
+            <span class="font-medium underline">Example </span>: <br />
+            parent.appendChild(p);
+          </p>
+          <p class="p-3 text-sm">
+            STEP 5: To remove Child use removeChild() function;
+            <br />
+            <span class="font-medium underline">Example </span>: <br />
+            parent.removeChild(p);
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="script/Qna.js"></script>
+</html>
